@@ -17,7 +17,7 @@ const PORT = 3001;
 
 app.use("/auth", authRouter);
 app.use("/users", verifyToken, userRouter);
-app.use("/events", eventRouter);
+app.use("/events", verifyToken, eventRouter);
 
 connectDB();
 
